@@ -2,7 +2,7 @@
   <div id="wrapper">
     <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
     <main>
-      <div class="left-side">
+      <!-- <div class="left-side">
         <span class="title">
           Welcome to your new project!
         </span>
@@ -24,7 +24,26 @@
           <button class="alt" @click="open('https://electron.atom.io/docs/')">Electron</button>
           <button class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button>
         </div>
-      </div>
+      </div> -->
+       <table style="width:100%">
+        <tr>
+          <th></th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Age</th>
+        </tr>
+        <tr>
+          <td>Jill</td>
+          <td>Smith</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Eve</td>
+          <td>Jackson</td>
+          <td>94</td>
+        </tr>
+      </table> 
+    
     </main>
   </div>
 </template>
@@ -35,10 +54,17 @@
   export default {
     name: 'landing-page',
     components: { SystemInformation },
+    props: {
+      paper_sheets: [],
+      JSON: String,
+    },
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)
-      }
+      },
+      load_patterns(){
+        // this.JSON = 
+      },
     }
   }
 </script>
