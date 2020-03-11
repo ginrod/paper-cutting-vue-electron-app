@@ -27,7 +27,7 @@
       </div> -->
        <table style="width:100%">
         <tr>
-          <th></th>
+          <!-- <th></th> -->
           <th>Firstname</th>
           <th>Lastname</th>
           <th>Age</th>
@@ -43,13 +43,17 @@
           <td>94</td>
         </tr>
       </table> 
-    
+
+      <!-- <div v-for="json in myJSON" :key="json">
+        {{json}}
+      </div> -->
     </main>
   </div>
 </template>
 
 <script>
   import SystemInformation from './LandingPage/SystemInformation'
+  import input from './backend/input.json'
 
   export default {
     name: 'landing-page',
@@ -63,9 +67,18 @@
         this.$electron.shell.openExternal(link)
       },
       load_patterns(){
-        // this.JSON = 
+        this.JSON = json
       },
-    }
+      write_input(){
+        var j = JSON.stringify([{'w': 23.4, 'h': 25, 'x':0, y:0}, {'w':5, 'h':5, 'x':23.4, y:25}])
+        var fs = require('fs');
+        fs.writeFile('myjsonfile.json', j, 'utf8', callback);
+      
+      },
+    },
+    created() {
+      write_input();
+    },
   }
 </script>
 
