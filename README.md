@@ -1,7 +1,8 @@
 # paper-cutting-vue-electron-app
 
 # Prerequisites
-Node v <= 11.x
+node version <= 11.x
+node version 12.x has compatibilities issues with electron vue 
 
 npm install vue-cli -g
 
